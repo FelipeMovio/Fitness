@@ -1,5 +1,14 @@
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString =
+    builder.Configuration.GetConnectionString("FitnessDb");
+
+if (string.IsNullOrWhiteSpace(connectionString))
+{
+    throw new InvalidOperationException(
+        "Connection String FitnessDb não encontrada.");
+}
+
 // Add services to the container.
 
 builder.Services.AddControllers();
