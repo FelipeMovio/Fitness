@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Fitness.Infrastructure\Fitness.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>
