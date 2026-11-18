@@ -1,7 +1,13 @@
+using Fitness.Infrastructure.DependencyInjectionConfig;
+
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString =
-    builder.Configuration.GetConnectionString("FitnessDb");
+var connectionString = builder.Configuration
+    .GetConnectionString("FitnessDb")
+    ?? throw new InvalidOperationException(
+        "A Connection String 'FitnessDb' não foi encontrada.");
+
+builder.Services.AddInfrastructure(connectionString);
 
 if (string.IsNullOrWhiteSpace(connectionString))
 {

@@ -1,5 +1,4 @@
-﻿
-using Fitness.Infrastructure.Common.Persistence.Context;
+﻿using Fitness.Infrastructure.Common.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
