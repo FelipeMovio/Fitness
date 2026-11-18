@@ -1,4 +1,7 @@
+using Fitness.Infrastructure.Common.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using Fitness.Infrastructure.DependencyInjectionConfig;
+using System.Windows;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,8 +24,7 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-var app = builder.Build();
-
+var app = builder.Build();     
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
