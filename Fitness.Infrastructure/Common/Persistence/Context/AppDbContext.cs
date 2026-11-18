@@ -1,10 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using Microsoft.EntityFrameworkCore;
 
-namespace Fitness.Infrastructure.Common.Persistence.Context
+namespace Fitness.Infrastructure.Common.Persistence.Context;
+
+public class AppDbContext : DbContext
 {
-    internal class AppDbContext
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options)
     {
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
     }
 }
