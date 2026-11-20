@@ -1,9 +1,11 @@
 using Fitness.Infrastructure.Common.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Fitness.Infrastructure.DependencyInjectionConfig;
+using Fitness.Application.DependencyInjectionConfig;
 using System.Windows;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddApplication();
 
 var connectionString = builder.Configuration
     .GetConnectionString("FitnessDb")
